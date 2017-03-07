@@ -99,34 +99,6 @@ final class EatMySpam {
 		}
 	}
 
-	/**
-	 * make a post request to the eat my spam api
-	 *
-	 * @param string $method method to be called
-	 * @param string $data array of data to be posted
-	 *
-	 * @return bool|object decoded response from eat my spam api
-	 */
-	protected function do_get( $method ) {
-		$url = 'https://' . self::API_HOST . '/' . $method;
-
-		$args = array(
-			'headers'     => array(
-				'User-Agent' => 'EatMySpam/' . self::VERSION . ', WordPress/' . $GLOBALS['wp_version']
-			),
-			'httpversion' => '1.0',
-			'timeout'     => 15
-		);
-
-		$response = wp_remote_get( $url, $args );
-
-		if ( is_wp_error( $response ) ) {
-			return false;
-		} else {
-			return json_decode( $response['body'] );
-		}
-	}
-
 }
 
 new EatMySpam;
