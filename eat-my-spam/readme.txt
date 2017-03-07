@@ -3,7 +3,7 @@ Contributors: dnljst
 Tags: spam, comments, antispam
 Requires at least: 4.7
 Tested up to: 4.7.3
-Stable tag: 0.3.0
+Stable tag: 0.4.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
 
@@ -18,6 +18,11 @@ This plugin allows you to use the free EatMySpam public API to check your WordPr
 * Put the plugin file in your plugin directory and activate it in your WP backend.
 
 == Changelog ==
+
+= 0.4.0 =
+
+* Spam messages are tagged as spam be default, but there is an option to delete those messages directly on settings page.
+* New option to send spam notification emails to site admin if a message is considered spam.
 
 = 0.3.1 =
 
