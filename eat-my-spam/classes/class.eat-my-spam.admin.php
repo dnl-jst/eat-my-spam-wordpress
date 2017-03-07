@@ -42,14 +42,6 @@ final class EatMySpam_Admin {
 	 **/
 	public function __construct() {
 
-		$response = $this->load_rulesets();
-
-		if ( $response === false || ! isset( $response->rulesets ) || ! is_array( $response->rulesets ) ) {
-			die( 'error loading rulesets' );
-		}
-
-		$this->rulesets = $response->rulesets;
-
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
@@ -58,9 +50,7 @@ final class EatMySpam_Admin {
 
 	public function admin_init() {
 
-		foreach ( $this->rulesets as $ruleset ) {
-			register_setting( 'eat-my-spam-settings', 'eatmyspam_exclude_ruleset_' . $ruleset->key );
-		}
+		register_setting( 'eat-my-spam-settings', 'eatmyspam_excluded_rulesets' );
 
 	}
 
@@ -74,6 +64,14 @@ final class EatMySpam_Admin {
 	}
 
 	public function menu_page_callback() {
+
+		$response = $this->load_rulesets();
+
+		if ( $response === false || ! isset( $response->rulesets ) || ! is_array( $response->rulesets ) ) {
+			die( 'error loading rulesets' );
+		}
+
+		$rulesets = $response->rulesets;
 
 		include( plugin_dir_path( __FILE__ ) . '/../views/settings.php' );
 

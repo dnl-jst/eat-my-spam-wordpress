@@ -18,10 +18,11 @@
                 <th><?php esc_html_e( 'Ruleset description', 'eat-my-spam' ); ?></th>
             </tr>
 
-			<?php foreach ( $this->rulesets as $ruleset ) : ?>
+			<?php foreach ( $rulesets as $ruleset ) : ?>
                 <tr>
                     <td><input type="checkbox"
-                               name="eatmyspam_exclude_ruleset_<?php echo $ruleset->key; ?>" <?php echo esc_attr( get_option( 'eatmyspam_exclude_ruleset_' . $ruleset->key ) ) == 'on' ? 'checked="checked"' : ''; ?> />
+                               name="eatmyspam_excluded_rulesets[]" <?php echo in_array( $ruleset->key, get_option( 'eatmyspam_excluded_rulesets' ) ) ? 'checked="checked"' : ''; ?>
+                               value="<?php echo esc_attr( $ruleset->key ); ?>"/>
                     </td>
                     <td><?php echo esc_html( $ruleset->key ); ?></td>
                     <td><?php echo esc_html( $ruleset->title ); ?></td>

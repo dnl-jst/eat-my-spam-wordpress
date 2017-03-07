@@ -41,16 +41,9 @@ final class EatMySpam {
 	 * @return array
 	 */
 	public function check_comment( $commentdata ) {
-		$post = get_post( $commentdata['comment_post_ID'] );
 
-		$options           = wp_load_alloptions();
-		$excluded_rulesets = array();
-
-		foreach ( $options as $key => $value ) {
-			if ( strpos( $key, 'eatmyspam_exclude_ruleset_' ) === 0 && $value === 'on' ) {
-				$excluded_rulesets[] = str_replace( 'eatmyspam_exclude_ruleset_', '', $key );
-			}
-		}
+		$post              = get_post( $commentdata['comment_post_ID'] );
+		$excluded_rulesets = get_option( 'eatmyspam_excluded_rulesets', array() );
 
 		$result = $this->do_post( 'analyze', array(
 			'message'          => $commentdata['comment_content'],
