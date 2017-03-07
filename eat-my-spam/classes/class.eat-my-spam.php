@@ -14,19 +14,17 @@ if ( ! function_exists( 'add_action' ) ) {
  * EatMySpam class
  *
  * @package EatMySpam
- * @since v0.1.0
  * @author Daniel Jost
  **/
 final class EatMySpam {
 
 	const API_HOST = 'api.eat-my-spam.de';
-	const VERSION = '0.1.0';
+	const VERSION = '0.2.0';
 
 	/**
 	 * Constructor
 	 *
 	 * @access public
-	 * @since v0.1.0
 	 * @author Daniel Jost
 	 **/
 	public function __construct() {

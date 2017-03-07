@@ -14,8 +14,6 @@ endif;
  * EatMySpam Admin Class
  *
  * @package EatMySpam
- * @since 0.1.0
- * @author Daniel Jost
  */
 final class EatMySpam_Admin {
 
@@ -26,7 +24,7 @@ final class EatMySpam_Admin {
 	 *
 	 * @var string
 	 **/
-	protected $version = '0.1.0';
+	protected $version = '0.2.0';
 
 	/**
 	 * @var array
@@ -37,7 +35,6 @@ final class EatMySpam_Admin {
 	 * Constructor
 	 *
 	 * @access public
-	 * @since v0.1.0
 	 * @author Daniel Jost
 	 **/
 	public function __construct() {
