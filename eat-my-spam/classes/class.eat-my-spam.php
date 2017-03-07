@@ -38,13 +38,13 @@ final class EatMySpam {
 	 *
 	 * @return array
 	 */
-	public function check_comment( $commentdata ) {
+	public function check_comment( $comment ) {
 
-		$post              = get_post( $commentdata['comment_post_ID'] );
+		$post              = get_post( $comment['comment_post_ID'] );
 		$excluded_rulesets = get_option( 'eatmyspam_excluded_rulesets', array() );
 
 		$result = $this->do_post( 'analyze', array(
-			'message'          => $commentdata['comment_content'],
+			'message'          => $comment['comment_content'],
 			'excludedRulesets' => $excluded_rulesets,
 			'threshold'        => get_option( 'eatmyspam_threshold', 5 )
 		) );
@@ -53,12 +53,78 @@ final class EatMySpam {
 
 			if ( isset( $result->spam ) && $result->spam === true ) {
 
-				wp_safe_redirect( esc_url_raw( get_permalink( $post ) ) );
-				die();
+				if ( get_option( 'eatmyspam_remove_spam' ) === 'on' ) {
+
+					wp_safe_redirect( esc_url_raw( get_permalink( $post ) ) );
+					die();
+
+
+				} else {
+
+					add_filter(
+						'pre_comment_approved',
+						create_function(
+							'',
+							'return "spam";'
+						)
+					);
+
+				}
+
+				if ( get_option( 'eatmyspam_send_notifications' ) === 'on' ) {
+
+					add_filter(
+						'comment_post',
+						array(
+							__CLASS__,
+							'send_mail_notification'
+						)
+					);
+
+				}
 			}
 		}
 
-		return $commentdata;
+		return $comment;
+	}
+
+	/**
+	 * @param int $id
+	 *
+	 * @return int
+	 */
+	public function send_mail_notification( $id ) {
+		$comment = get_comment( $id, ARRAY_A );
+
+		if ( empty( $comment ) ) {
+			return $id;
+		}
+
+		$subject = sprintf(
+			'[%s] %s',
+			stripslashes_deep(
+				html_entity_decode(
+					get_bloginfo( 'name' ),
+					ENT_QUOTES
+				)
+			),
+			esc_html__( 'Comment marked as spam', 'eat-my-spam' )
+		);
+
+		if ( ! $content = strip_tags( stripslashes( $comment['comment_content'] ) ) ) {
+			$content = sprintf(
+				'-- %s --',
+				esc_html__( 'Content removed by EatMySpam', 'eat-my-spam' )
+			);
+		}
+
+		wp_mail(
+			get_bloginfo( 'admin_email' ),
+			$subject,
+			$content
+		);
+
+		return $id;
 	}
 
 	/**

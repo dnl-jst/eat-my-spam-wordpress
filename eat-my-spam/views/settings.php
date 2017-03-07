@@ -11,11 +11,27 @@
         <h2><?php esc_html_e( 'Settings:', 'eat-my-spam' ); ?></h2>
 
         <table>
+
             <tr>
                 <th><label for="eatmyspam_threshold">Spam threshold:</label></th>
                 <td><input type="number" id="eatmyspam_threshold" name="eatmyspam_threshold"
                            value="<?php echo get_option( 'eatmyspam_threshold', 5 ); ?>"></td>
             </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input id="eatmyspam_remove_spam" name="eatmyspam_remove_spam" type="checkbox" <?php echo (get_option('eatmyspam_remove_spam') === 'on') ? 'checked="checked"' : ''; ?>/>
+                    <label for="eatmyspam_remove_spam">Remove spam?</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input id="eatmyspam_send_notifications" name="eatmyspam_send_notifications" type="checkbox" <?php echo (get_option('eatmyspam_send_notifications') === 'on') ? 'checked="checked"' : ''; ?>/>
+                    <label for="eatmyspam_send_notifications">Send spam notifications to admin?</label>
+                </td>
+            </tr>
+
         </table>
 
         <h2><?php esc_html_e( 'Excluded rulesets:', 'eat-my-spam' ); ?></h2>
