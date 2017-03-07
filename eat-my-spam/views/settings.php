@@ -8,6 +8,16 @@
 
 		<?php do_settings_sections( 'eat-my-spam-settings' ); ?>
 
+        <h2><?php esc_html_e( 'Settings:', 'eat-my-spam' ); ?></h2>
+
+        <table>
+            <tr>
+                <th><label for="eatmyspam_threshold">Spam threshold:</label></th>
+                <td><input type="number" id="eatmyspam_threshold" name="eatmyspam_threshold"
+                           value="<?php echo get_option( 'eatmyspam_threshold', 5 ); ?>"></td>
+            </tr>
+        </table>
+
         <h2><?php esc_html_e( 'Excluded rulesets:', 'eat-my-spam' ); ?></h2>
 
         <table>
@@ -20,11 +30,14 @@
 
 			<?php foreach ( $rulesets as $ruleset ) : ?>
                 <tr>
-                    <td><input type="checkbox"
+                    <td><input id="eatmyspam_exclude_ruleset_<?php echo esc_attr( $ruleset->key ); ?>"
+                               type="checkbox"
                                name="eatmyspam_excluded_rulesets[]" <?php echo in_array( $ruleset->key, get_option( 'eatmyspam_excluded_rulesets' ) ) ? 'checked="checked"' : ''; ?>
                                value="<?php echo esc_attr( $ruleset->key ); ?>"/>
                     </td>
-                    <td><?php echo esc_html( $ruleset->key ); ?></td>
+                    <td>
+                        <label for="eatmyspam_exclude_ruleset_<?php echo esc_attr( $ruleset->key ); ?>"><?php echo esc_html( $ruleset->key ); ?></label>
+                    </td>
                     <td><?php echo esc_html( $ruleset->title ); ?></td>
                 </tr>
 			<?php endforeach; ?>

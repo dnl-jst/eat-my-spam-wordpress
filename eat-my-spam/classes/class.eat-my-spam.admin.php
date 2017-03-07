@@ -47,6 +47,7 @@ final class EatMySpam_Admin {
 
 	public function admin_init() {
 
+		register_setting( 'eat-my-spam-settings', 'eatmyspam_threshold' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_excluded_rulesets' );
 
 	}

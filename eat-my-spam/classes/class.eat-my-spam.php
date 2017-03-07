@@ -45,7 +45,8 @@ final class EatMySpam {
 
 		$result = $this->do_post( 'analyze', array(
 			'message'          => $commentdata['comment_content'],
-			'excludedRulesets' => $excluded_rulesets
+			'excludedRulesets' => $excluded_rulesets,
+			'threshold'        => get_option( 'eatmyspam_threshold', 5 )
 		) );
 
 		if ( $result !== null ) {
