@@ -24,7 +24,7 @@ final class EatMySpam_Admin {
 	 *
 	 * @var string
 	 **/
-	protected $version = '0.3.0';
+	protected $version = '0.3.1';
 
 	/**
 	 * @var array
@@ -54,7 +54,7 @@ final class EatMySpam_Admin {
 
 	public function admin_menu() {
 
-		add_options_page( 'EatMySpam! Settings', 'EatMySpam!', 'manage_options', 'eat-my-spam', array(
+		add_options_page( 'EatMySpam Settings', 'EatMySpam', 'manage_options', 'eat-my-spam', array(
 			$this,
 			'menu_page_callback'
 		) );

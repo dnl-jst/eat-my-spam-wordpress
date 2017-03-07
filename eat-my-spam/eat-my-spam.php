@@ -1,10 +1,10 @@
 <?php
 
 /*
-Plugin Name: Eat My Spam
+Plugin Name: EatMySpam
 Plugin URL: https://github.com/dnl-jst/eat-my-spam-wordpress
 Description: Check your WordPress comments for spam
-Version: 0.3.0
+Version: 0.3.1
 Author: Daniel Jost
 Author URL: http://www.daniel-jost.de/
 */

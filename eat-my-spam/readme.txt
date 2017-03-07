@@ -1,4 +1,4 @@
-=== Eat My Spam ===
+=== EatMySpam ===
 Contributors: dnljst
 Tags: spam, comments, antispam
 Requires at least: 4.7
@@ -7,17 +7,21 @@ Stable tag: 0.3.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
 
-This plugin allows you to use the free Eat My Spam public API to check your WordPress comments for spam.
+This plugin allows you to use the free EatMySpam public API to check your WordPress comments for spam.
 
 == Description ==
 
-This plugin allows you to use the free Eat My Spam public API to check your WordPress comments for spam.
+This plugin allows you to use the free EatMySpam public API to check your WordPress comments for spam.
 
 == Installation ==
 
 * Put the plugin file in your plugin directory and activate it in your WP backend.
 
 == Changelog ==
+
+= 0.3.1 =
+
+* Unify plugin name.
 
 = 0.3.0 =
 
