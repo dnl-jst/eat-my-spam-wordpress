@@ -43,7 +43,19 @@ final class EatMySpam {
 	public function check_comment( $commentdata ) {
 		$post = get_post( $commentdata['comment_post_ID'] );
 
-		$result = $this->do_post( 'analyze', array( 'message' => $commentdata['comment_content'] ) );
+		$options           = wp_load_alloptions();
+		$excluded_rulesets = array();
+
+		foreach ( $options as $key => $value ) {
+			if ( strpos( $key, 'eatmyspam_exclude_ruleset_' ) === 0 && $value === 'on' ) {
+				$excluded_rulesets[] = str_replace( 'eatmyspam_exclude_ruleset_', '', $key );
+			}
+		}
+
+		$result = $this->do_post( 'analyze', array(
+			'message'          => $commentdata['comment_content'],
+			'excludedRulesets' => $excluded_rulesets
+		) );
 
 		if ( $result !== null ) {
 
@@ -62,22 +74,51 @@ final class EatMySpam {
 	 *
 	 * @param string $method method to be called
 	 * @param string $data array of data to be posted
+	 *
 	 * @return bool|object decoded response from eat my spam api
 	 */
 	protected function do_post( $method, $data ) {
 		$url = 'https://' . self::API_HOST . '/' . $method;
 
 		$args = array(
-			'headers' => array(
+			'headers'     => array(
 				'Content-Type' => 'application/json; charset=' . get_option( 'blog_charset' ),
-				'User-Agent' => 'EatMySpam/' . self::VERSION . ', WordPress/' . $GLOBALS['wp_version']
+				'User-Agent'   => 'EatMySpam/' . self::VERSION . ', WordPress/' . $GLOBALS['wp_version']
 			),
-			'body'    => json_encode( $data ),
+			'body'        => json_encode( $data ),
 			'httpversion' => '1.0',
-			'timeout' => 15
+			'timeout'     => 15
 		);
 
 		$response = wp_remote_post( $url, $args );
+
+		if ( is_wp_error( $response ) ) {
+			return false;
+		} else {
+			return json_decode( $response['body'] );
+		}
+	}
+
+	/**
+	 * make a post request to the eat my spam api
+	 *
+	 * @param string $method method to be called
+	 * @param string $data array of data to be posted
+	 *
+	 * @return bool|object decoded response from eat my spam api
+	 */
+	protected function do_get( $method ) {
+		$url = 'https://' . self::API_HOST . '/' . $method;
+
+		$args = array(
+			'headers'     => array(
+				'User-Agent' => 'EatMySpam/' . self::VERSION . ', WordPress/' . $GLOBALS['wp_version']
+			),
+			'httpversion' => '1.0',
+			'timeout'     => 15
+		);
+
+		$response = wp_remote_get( $url, $args );
 
 		if ( is_wp_error( $response ) ) {
 			return false;
