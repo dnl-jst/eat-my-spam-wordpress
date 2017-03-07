@@ -41,6 +41,7 @@ final class EatMySpam_Admin {
 	 * @author Daniel Jost
 	 **/
 	public function __construct() {
+
 		$response = $this->load_rulesets();
 
 		if ( $response === false || ! isset( $response->rulesets ) || ! is_array( $response->rulesets ) ) {
@@ -51,6 +52,8 @@ final class EatMySpam_Admin {
 
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+
+		add_filter( 'plugin_action_links_eat-my-spam/eat-my-spam.php', array( $this, 'add_settings_link' ) );
 	}
 
 	public function admin_init() {
@@ -80,11 +83,11 @@ final class EatMySpam_Admin {
 		$url = 'https://' . self::API_HOST . '/rulesets';
 
 		$args = array(
-			'headers' => array(
+			'headers'     => array(
 				'User-Agent' => 'EatMySpam/' . $this->version . ', WordPress/' . $GLOBALS['wp_version']
 			),
 			'httpversion' => '1.0',
-			'timeout' => 15
+			'timeout'     => 15
 		);
 
 		$response = wp_remote_get( $url, $args );
@@ -94,6 +97,15 @@ final class EatMySpam_Admin {
 		} else {
 			return json_decode( $response['body'] );
 		}
+	}
+
+	public function add_settings_link( $links ) {
+
+		$settings_link = '<a href="options-general.php?page=eat-my-spam">' . __( 'Settings', 'eat-my-spam' ) . '</a>';
+
+		array_unshift( $links, $settings_link );
+
+		return $links;
 	}
 
 }
