@@ -19,6 +19,15 @@ This plugin allows you to use the free EatMySpam public API to check your WordPr
 
 == Changelog ==
 
+= 0.5.0 =
+
+* add possibility to translate plugin
+* add translations for de_DE
+
+= 0.4.1 =
+
+* fix in_array warnings on settings page
+
 = 0.4.0 =
 
 * Spam messages are tagged as spam be default, but there is an option to delete those messages directly on settings page.

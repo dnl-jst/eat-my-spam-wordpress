@@ -19,7 +19,7 @@ if ( ! function_exists( 'add_action' ) ) {
 final class EatMySpam {
 
 	const API_HOST = 'api.eat-my-spam.de';
-	const VERSION = '0.4.0';
+	const VERSION = '0.5.0';
 
 	/**
 	 * Constructor
@@ -34,7 +34,7 @@ final class EatMySpam {
 	/**
 	 * check whether comment is spam
 	 *
-	 * @param array $commentdata
+	 * @param array $comment
 	 *
 	 * @return array
 	 */
