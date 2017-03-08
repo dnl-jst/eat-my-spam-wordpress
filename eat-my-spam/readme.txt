@@ -1,5 +1,5 @@
 === EatMySpam ===
-Contributors: dnljst
+Contributors: danieljost
 Tags: spam, comments, antispam
 Requires at least: 4.7
 Tested up to: 4.7.3
