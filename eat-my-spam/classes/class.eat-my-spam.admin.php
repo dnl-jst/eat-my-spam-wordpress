@@ -73,6 +73,12 @@ final class EatMySpam_Admin {
 
 		$rulesets = $response->rulesets;
 
+		$excludedRulesets = get_option( 'eatmyspam_excluded_rulesets', array() );
+
+		if ( ! is_array( $excludedRulesets ) ) {
+			$excludedRulesets = array();
+		}
+
 		include( plugin_dir_path( __FILE__ ) . '/../views/settings.php' );
 
 	}

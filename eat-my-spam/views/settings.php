@@ -20,14 +20,16 @@
 
             <tr>
                 <td colspan="2">
-                    <input id="eatmyspam_remove_spam" name="eatmyspam_remove_spam" type="checkbox" <?php echo (get_option('eatmyspam_remove_spam') === 'on') ? 'checked="checked"' : ''; ?>/>
+                    <input id="eatmyspam_remove_spam" name="eatmyspam_remove_spam"
+                           type="checkbox" <?php echo ( get_option( 'eatmyspam_remove_spam' ) === 'on' ) ? 'checked="checked"' : ''; ?>/>
                     <label for="eatmyspam_remove_spam">Remove spam?</label>
                 </td>
             </tr>
 
             <tr>
                 <td colspan="2">
-                    <input id="eatmyspam_send_notifications" name="eatmyspam_send_notifications" type="checkbox" <?php echo (get_option('eatmyspam_send_notifications') === 'on') ? 'checked="checked"' : ''; ?>/>
+                    <input id="eatmyspam_send_notifications" name="eatmyspam_send_notifications"
+                           type="checkbox" <?php echo ( get_option( 'eatmyspam_send_notifications' ) === 'on' ) ? 'checked="checked"' : ''; ?>/>
                     <label for="eatmyspam_send_notifications">Send spam notifications to admin?</label>
                 </td>
             </tr>
@@ -48,7 +50,7 @@
                 <tr>
                     <td><input id="eatmyspam_exclude_ruleset_<?php echo esc_attr( $ruleset->key ); ?>"
                                type="checkbox"
-                               name="eatmyspam_excluded_rulesets[]" <?php echo in_array( $ruleset->key, get_option( 'eatmyspam_excluded_rulesets' ) ) ? 'checked="checked"' : ''; ?>
+                               name="eatmyspam_excluded_rulesets[]" <?php echo in_array( $ruleset->key, $excludedRulesets ) ? 'checked="checked"' : ''; ?>
                                value="<?php echo esc_attr( $ruleset->key ); ?>"/>
                     </td>
                     <td>
