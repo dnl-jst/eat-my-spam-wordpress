@@ -7,6 +7,7 @@ Description: Check your WordPress comments for spam
 Version: 0.4.0
 Author: Daniel Jost
 Author URL: http://www.daniel-jost.de/
+Text Domain: eat-my-spam
 */
 
 /**
@@ -17,6 +18,8 @@ if ( !function_exists( 'add_action' ) ) {
     header( 'HTTP/1.1 403 Forbidden' );
     exit();
 }
+
+load_plugin_textdomain( 'eat-my-spam', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
 if ( is_admin() )
     require_once( 'classes/class.eat-my-spam.admin.php' );
