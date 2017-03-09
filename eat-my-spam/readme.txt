@@ -11,7 +11,7 @@ This plugin allows you to use the free EatMySpam public API to check your WordPr
 
 == Description ==
 
-This plugin allows you to use the free EatMySpam public API to check your WordPress comments for spam. Tested with PHP7.
+This plugin allows you to use the free EatMySpam public API to check your WordPress comments for spam. Tested to be compatible with PHP 7.0 and PHP 7.1.
 
 == Installation ==
 
