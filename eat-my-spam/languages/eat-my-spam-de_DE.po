@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-09 10:56+0100\n"
-"PO-Revision-Date: 2017-03-09 10:57+0100\n"
+"POT-Creation-Date: 2017-03-09 11:09+0100\n"
+"PO-Revision-Date: 2017-03-09 11:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/class.eat-my-spam.admin.php:112
+#: classes/class.eat-my-spam.admin.php:113
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -66,27 +66,31 @@ msgstr "EatMySpam Einstellungen"
 msgid "Settings:"
 msgstr "Einstellungen:"
 
-#: views/settings.php:16
+#: views/settings.php:17
 msgid "Spam threshold:"
 msgstr "Spam-Schwellwert:"
 
-#: views/settings.php:25
+#: views/settings.php:29
 msgid "Remove spam?"
 msgstr "Spam entfernen?"
 
-#: views/settings.php:33
+#: views/settings.php:37
 msgid "Send spam notifications to admin?"
 msgstr "Spam-Benachrichtigung an Administrator schicken?"
 
-#: views/settings.php:39
+#: views/settings.php:45
+msgid "Disable automatic reports to EatMySpam server?"
+msgstr "Automatische Berichte and EatMySpam-Server deaktivieren?"
+
+#: views/settings.php:51
 msgid "Excluded rulesets:"
 msgstr "Ausgeschlossene Regelsätze:"
 
-#: views/settings.php:45
+#: views/settings.php:57
 msgid "Ruleset key"
 msgstr "Regelsatz-Schlüssel"
 
-#: views/settings.php:46
+#: views/settings.php:58
 msgid "Ruleset description"
 msgstr "Beschreibung des Regelsatzes"
 

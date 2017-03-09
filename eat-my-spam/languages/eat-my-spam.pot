@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-09 10:56+0100\n"
+"POT-Creation-Date: 2017-03-09 11:09+0100\n"
 "PO-Revision-Date: 2017-03-08 16:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/class.eat-my-spam.admin.php:112
+#: classes/class.eat-my-spam.admin.php:113
 msgid "Settings"
 msgstr ""
 
@@ -65,27 +65,31 @@ msgstr ""
 msgid "Settings:"
 msgstr ""
 
-#: views/settings.php:16
+#: views/settings.php:17
 msgid "Spam threshold:"
 msgstr ""
 
-#: views/settings.php:25
+#: views/settings.php:29
 msgid "Remove spam?"
 msgstr ""
 
-#: views/settings.php:33
+#: views/settings.php:37
 msgid "Send spam notifications to admin?"
 msgstr ""
 
-#: views/settings.php:39
+#: views/settings.php:45
+msgid "Disable automatic reports to EatMySpam server?"
+msgstr ""
+
+#: views/settings.php:51
 msgid "Excluded rulesets:"
 msgstr ""
 
-#: views/settings.php:45
+#: views/settings.php:57
 msgid "Ruleset key"
 msgstr ""
 
-#: views/settings.php:46
+#: views/settings.php:58
 msgid "Ruleset description"
 msgstr ""
 
