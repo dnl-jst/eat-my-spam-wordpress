@@ -55,6 +55,7 @@ class EatMySpam_Admin {
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_send_notifications' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_excluded_rulesets' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_disable_reports' );
+		register_setting( 'eat-my-spam-settings', 'eatmyspam_disable_cf7_integration' );
 
 	}
 

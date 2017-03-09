@@ -26,7 +26,9 @@
                 <td colspan="2">
                     <input id="eatmyspam_remove_spam" name="eatmyspam_remove_spam"
                            type="checkbox" <?php echo ( get_option( 'eatmyspam_remove_spam' ) === 'on' ) ? 'checked="checked"' : ''; ?>/>
-                    <label for="eatmyspam_remove_spam"><?php esc_html_e( 'Remove spam?', 'eat-my-spam' ); ?></label>
+                    <label for="eatmyspam_remove_spam"><?php esc_html_e( 'Remove spam?', 'eat-my-spam' ); ?>
+                        <span class="color: grey;">(<?php esc_html_e( 'Only works with WordPress comments', 'eat-my-spam' ); ?>)</span>
+                    </label>
                 </td>
             </tr>
 
@@ -43,6 +45,14 @@
                     <input id="eatmyspam_disable_reports" name="eatmyspam_disable_reports"
                            type="checkbox" <?php echo ( get_option( 'eatmyspam_disable_reports' ) === 'on' ) ? 'checked="checked"' : ''; ?>/>
                     <label for="eatmyspam_disable_reports"><?php esc_html_e( 'Disable automatic reports to EatMySpam server?', 'eat-my-spam' ); ?></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input id="eatmyspam_disable_cf7_integration" name="eatmyspam_disable_cf7_integration"
+                           type="checkbox" <?php echo ( get_option( 'eatmyspam_disable_cf7_integration' ) === 'on' ) ? 'checked="checked"' : ''; ?>/>
+                    <label for="eatmyspam_disable_cf7_integration"><?php esc_html_e( 'Disable Contact Form 7 integration?', 'eat-my-spam' ); ?></label>
                 </td>
             </tr>
 
