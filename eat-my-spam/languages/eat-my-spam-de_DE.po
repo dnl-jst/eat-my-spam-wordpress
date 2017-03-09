@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-09 11:09+0100\n"
-"PO-Revision-Date: 2017-03-09 11:09+0100\n"
+"POT-Creation-Date: 2017-03-09 16:41+0100\n"
+"PO-Revision-Date: 2017-03-09 16:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -55,8 +55,13 @@ msgid "Comment:"
 msgstr "Kommentar:"
 
 #: classes/class.eat-my-spam.php:134
-msgid "Spam list"
-msgstr "Spam-Liste"
+#, php-format
+msgid ""
+"To manage comments, log in to WordPress at %s and navigate to: Comments > "
+"Spam"
+msgstr ""
+"Um Kommentare zu verwalten, melden Sie sich bei WordPress unter %s an und "
+"navigieren Sie zu: Kommentare > Spam"
 
 #: views/settings.php:3
 msgid "EatMySpam Settings"
@@ -105,3 +110,6 @@ msgstr "Überprüfen Sie Ihre WordPress Kommentare auf Spam"
 #. Author of the plugin/theme
 msgid "Daniel Jost"
 msgstr "Daniel Jost"
+
+#~ msgid "Spam list"
+#~ msgstr "Spam-Liste"

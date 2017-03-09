@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-09 11:09+0100\n"
+"POT-Creation-Date: 2017-03-09 16:41+0100\n"
 "PO-Revision-Date: 2017-03-08 16:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -54,7 +54,10 @@ msgid "Comment:"
 msgstr ""
 
 #: classes/class.eat-my-spam.php:134
-msgid "Spam list"
+#, php-format
+msgid ""
+"To manage comments, log in to WordPress at %s and navigate to: Comments > "
+"Spam"
 msgstr ""
 
 #: views/settings.php:3

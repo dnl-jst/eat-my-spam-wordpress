@@ -131,7 +131,7 @@ final class EatMySpam {
 		$mail[] = esc_html__( 'Comment:', 'eat-my-spam' );
 		$mail[] = $content;
 		$mail[] = '';
-		$mail[] = sprintf( "%s: %s", esc_html__( 'Spam list', 'eat-my-spam' ), admin_url( 'edit-comments.php?comment_status=spam' ) );
+		$mail[] = sprintf(__( 'To manage comments, log in to WordPress at %s and navigate to: Comments > Spam', 'eat-my-spam' ), get_site_url());
 
 		wp_mail(
 			get_bloginfo( 'admin_email' ),
