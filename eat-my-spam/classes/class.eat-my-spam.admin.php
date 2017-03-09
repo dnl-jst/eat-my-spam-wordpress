@@ -117,45 +117,46 @@ final class EatMySpam_Admin {
 	}
 
 	public function report_ham( $comment_id ) {
-		return $this->report( 'ham', $comment_id );
+		$this->report( 'ham', $comment_id );
 	}
 
 	public function report_spam( $comment_id ) {
-		return $this->report( 'spam', $comment_id );
+		$this->report( 'spam', $comment_id );
 	}
 
 	protected function report( $type, $comment_id ) {
+
 		global $wpdb;
 
 		$comment = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->comments} WHERE comment_ID = %d", $comment_id ), ARRAY_A );
 
-		if ( ! $comment ) {
-			return new WP_Error( 'invalid-comment-id', __( 'Comment not found.', 'eat-my-spam' ) );
-		}
+		if ( $comment ) {
 
-		$url = 'https://' . self::API_HOST . '/report';
+			$url = 'https://' . self::API_HOST . '/report';
 
-		$data = array(
-			'type'    => $type,
-			'message' => $comment['comment_content']
-		);
+			$data = array(
+				'type'    => $type,
+				'message' => $comment['comment_content']
+			);
 
-		$args = array(
-			'headers'     => array(
-				'Content-Type' => 'application/json; charset=' . get_option( 'blog_charset' ),
-				'User-Agent'   => 'EatMySpam/' . $this->version . ', WordPress/' . $GLOBALS['wp_version']
-			),
-			'body'        => json_encode( $data ),
-			'httpversion' => '1.0',
-			'timeout'     => 15
-		);
+			$args = array(
+				'headers'     => array(
+					'Content-Type' => 'application/json; charset=' . get_option( 'blog_charset' ),
+					'User-Agent'   => 'EatMySpam/' . $this->version . ', WordPress/' . $GLOBALS['wp_version']
+				),
+				'body'        => json_encode( $data ),
+				'httpversion' => '1.0',
+				'timeout'     => 15
+			);
 
-		$response = wp_remote_post( $url, $args );
+			$response = wp_remote_post( $url, $args );
 
-		if ( is_wp_error( $response ) ) {
-			return false;
-		} else {
-			return json_decode( $response['body'] );
+			if ( is_wp_error( $response ) ) {
+				return false;
+			} else {
+				return json_decode( $response['body'] );
+			}
+
 		}
 	}
 
