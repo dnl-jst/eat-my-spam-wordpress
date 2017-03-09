@@ -22,6 +22,6 @@ if ( !function_exists( 'add_action' ) ) {
 load_plugin_textdomain( 'eat-my-spam', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
 if ( is_admin() )
-    require_once( 'classes/class.eat-my-spam.admin.php' );
+    require_once( 'includes/eat-my-spam.admin.php' );
 else
-    require_once( 'classes/class.eat-my-spam.php' );
+    require_once( 'includes/eat-my-spam.php' );

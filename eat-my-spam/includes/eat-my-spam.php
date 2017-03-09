@@ -16,7 +16,7 @@ if ( ! function_exists( 'add_action' ) ) {
  * @package EatMySpam
  * @author Daniel Jost
  **/
-final class EatMySpam {
+class EatMySpam {
 
 	const API_HOST = 'api.eat-my-spam.de';
 	const VERSION = '0.6.2';
@@ -27,8 +27,8 @@ final class EatMySpam {
 	 * @access public
 	 * @author Daniel Jost
 	 **/
-	public function __construct() {
-		add_filter( 'preprocess_comment', array( $this, 'check_comment' ), 1 );
+	public static function init() {
+		add_filter( 'preprocess_comment', array( __CLASS__, 'check_comment' ), 1 );
 	}
 
 	/**
@@ -38,12 +38,12 @@ final class EatMySpam {
 	 *
 	 * @return array
 	 */
-	public function check_comment( $comment ) {
+	public static function check_comment( $comment ) {
 
 		$post              = get_post( $comment['comment_post_ID'] );
 		$excluded_rulesets = get_option( 'eatmyspam_excluded_rulesets', array() );
 
-		$result = $this->do_post( 'analyze', array(
+		$result = self::do_post( 'analyze', array(
 			'message'          => $comment['comment_content'],
 			'excludedRulesets' => $excluded_rulesets,
 			'threshold'        => get_option( 'eatmyspam_threshold', 5 )
@@ -93,7 +93,7 @@ final class EatMySpam {
 	 *
 	 * @return int
 	 */
-	public function send_mail_notification( $id ) {
+	public static function send_mail_notification( $id ) {
 		$comment = get_comment( $id, ARRAY_A );
 
 		if ( empty( $comment ) ) {
@@ -174,4 +174,4 @@ final class EatMySpam {
 
 }
 
-new EatMySpam;
+EatMySpam::init();

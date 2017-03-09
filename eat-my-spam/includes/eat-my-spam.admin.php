@@ -15,7 +15,7 @@ endif;
  *
  * @package EatMySpam
  */
-final class EatMySpam_Admin {
+class EatMySpam_Admin {
 
 	const API_HOST = 'api.eat-my-spam.de';
 
@@ -24,12 +24,12 @@ final class EatMySpam_Admin {
 	 *
 	 * @var string
 	 **/
-	protected $version = '0.6.2';
+	protected static $version = '0.6.2';
 
 	/**
 	 * @var array
 	 */
-	protected $rulesets;
+	protected static $rulesets;
 
 	/**
 	 * Constructor
@@ -37,18 +37,18 @@ final class EatMySpam_Admin {
 	 * @access public
 	 * @author Daniel Jost
 	 **/
-	public function __construct() {
+	public static function init() {
 
-		add_action( 'admin_init', array( $this, 'admin_init' ) );
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
+		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
 
-		add_action( 'spam_comment', array( $this, 'report_spam' ) );
-		add_action( 'unspam_comment', array( $this, 'report_ham' ) );
+		add_action( 'spam_comment', array( __CLASS__, 'report_spam' ) );
+		add_action( 'unspam_comment', array( __CLASS__, 'report_ham' ) );
 
-		add_filter( 'plugin_action_links_eat-my-spam/eat-my-spam.php', array( $this, 'add_settings_link' ) );
+		add_filter( 'plugin_action_links_eat-my-spam/eat-my-spam.php', array( __CLASS__, 'add_settings_link' ) );
 	}
 
-	public function admin_init() {
+	public static function admin_init() {
 
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_threshold' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_remove_spam' );
@@ -58,18 +58,18 @@ final class EatMySpam_Admin {
 
 	}
 
-	public function admin_menu() {
+	public static function admin_menu() {
 
 		add_options_page( 'EatMySpam Settings', 'EatMySpam', 'manage_options', 'eat-my-spam', array(
-			$this,
+			__CLASS__,
 			'menu_page_callback'
 		) );
 
 	}
 
-	public function menu_page_callback() {
+	public static function menu_page_callback() {
 
-		$response = $this->load_rulesets();
+		$response = self::load_rulesets();
 
 		if ( $response === false || ! isset( $response->rulesets ) || ! is_array( $response->rulesets ) ) {
 			die( 'error loading rulesets' );
@@ -87,13 +87,13 @@ final class EatMySpam_Admin {
 
 	}
 
-	protected function load_rulesets() {
+	protected static function load_rulesets() {
 
 		$url = 'https://' . self::API_HOST . '/rulesets';
 
 		$args = array(
 			'headers'     => array(
-				'User-Agent' => 'EatMySpam/' . $this->version . ', WordPress/' . $GLOBALS['wp_version']
+				'User-Agent' => 'EatMySpam/' . self::$version . ', WordPress/' . $GLOBALS['wp_version']
 			),
 			'httpversion' => '1.0',
 			'timeout'     => 15
@@ -108,7 +108,7 @@ final class EatMySpam_Admin {
 		}
 	}
 
-	public function add_settings_link( $links ) {
+	public static function add_settings_link( $links ) {
 
 		$settings_link = '<a href="options-general.php?page=eat-my-spam">' . __( 'Settings', 'eat-my-spam' ) . '</a>';
 
@@ -117,19 +117,19 @@ final class EatMySpam_Admin {
 		return $links;
 	}
 
-	public function report_ham( $comment_id ) {
+	public static function report_ham( $comment_id ) {
 		if ( get_option( 'eatmyspam_disable_reports' ) !== 'on' ) {
-			$this->report( 'ham', $comment_id );
+			self::report( 'ham', $comment_id );
 		}
 	}
 
 	public function report_spam( $comment_id ) {
 		if ( get_option( 'eatmyspam_disable_reports' ) !== 'on' ) {
-			$this->report( 'spam', $comment_id );
+			self::report( 'spam', $comment_id );
 		}
 	}
 
-	protected function report( $type, $comment_id ) {
+	protected static function report( $type, $comment_id ) {
 
 		global $wpdb;
 
@@ -147,7 +147,7 @@ final class EatMySpam_Admin {
 			$args = array(
 				'headers'     => array(
 					'Content-Type' => 'application/json; charset=' . get_option( 'blog_charset' ),
-					'User-Agent'   => 'EatMySpam/' . $this->version . ', WordPress/' . $GLOBALS['wp_version']
+					'User-Agent'   => 'EatMySpam/' . self::$version . ', WordPress/' . $GLOBALS['wp_version']
 				),
 				'body'        => json_encode( $data ),
 				'httpversion' => '1.0',
@@ -167,4 +167,4 @@ final class EatMySpam_Admin {
 
 }
 
-new EatMySpam_Admin();
+EatMySpam_Admin::init();
