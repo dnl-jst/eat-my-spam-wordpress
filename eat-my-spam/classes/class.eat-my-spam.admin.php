@@ -54,6 +54,7 @@ final class EatMySpam_Admin {
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_remove_spam' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_send_notifications' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_excluded_rulesets' );
+		register_setting( 'eat-my-spam-settings', 'eatmyspam_disable_reports' );
 
 	}
 
@@ -117,11 +118,15 @@ final class EatMySpam_Admin {
 	}
 
 	public function report_ham( $comment_id ) {
-		$this->report( 'ham', $comment_id );
+		if ( get_option( 'eatmyspam_disable_reports' ) !== 'on' ) {
+			$this->report( 'ham', $comment_id );
+		}
 	}
 
 	public function report_spam( $comment_id ) {
-		$this->report( 'spam', $comment_id );
+		if ( get_option( 'eatmyspam_disable_reports' ) !== 'on' ) {
+			$this->report( 'spam', $comment_id );
+		}
 	}
 
 	protected function report( $type, $comment_id ) {

@@ -13,9 +13,13 @@
         <table>
 
             <tr>
-                <th><label for="eatmyspam_threshold"><?php esc_html_e( 'Spam threshold:', 'eat-my-spam' ); ?></label></th>
-                <td><input type="number" id="eatmyspam_threshold" name="eatmyspam_threshold"
-                           value="<?php echo get_option( 'eatmyspam_threshold', 5 ); ?>"></td>
+                <th>
+                    <label for="eatmyspam_threshold"><?php esc_html_e( 'Spam threshold:', 'eat-my-spam' ); ?></label>
+                </th>
+                <td>
+                    <input type="number" id="eatmyspam_threshold" name="eatmyspam_threshold"
+                           value="<?php echo get_option( 'eatmyspam_threshold', 5 ); ?>">
+                </td>
             </tr>
 
             <tr>
@@ -31,6 +35,14 @@
                     <input id="eatmyspam_send_notifications" name="eatmyspam_send_notifications"
                            type="checkbox" <?php echo ( get_option( 'eatmyspam_send_notifications' ) === 'on' ) ? 'checked="checked"' : ''; ?>/>
                     <label for="eatmyspam_send_notifications"><?php esc_html_e( 'Send spam notifications to admin?', 'eat-my-spam' ); ?></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input id="eatmyspam_disable_reports" name="eatmyspam_disable_reports"
+                           type="checkbox" <?php echo ( get_option( 'eatmyspam_disable_reports' ) === 'on' ) ? 'checked="checked"' : ''; ?>/>
+                    <label for="eatmyspam_disable_reports"><?php esc_html_e( 'Disable automatic reports to EatMySpam server?', 'eat-my-spam' ); ?></label>
                 </td>
             </tr>
 
