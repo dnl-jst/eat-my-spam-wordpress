@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-08 16:37+0100\n"
-"PO-Revision-Date: 2017-03-08 16:38+0100\n"
+"POT-Creation-Date: 2017-03-09 10:56+0100\n"
+"PO-Revision-Date: 2017-03-09 10:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -15,22 +15,48 @@ msgstr ""
 "X-Poedit-WPHeader: eat-my-spam.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/class.eat-my-spam.admin.php:108
+#: classes/class.eat-my-spam.admin.php:112
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: classes/class.eat-my-spam.php:111
+#: classes/class.eat-my-spam.php:115
 msgid "Comment marked as spam"
 msgstr "Kommentar als Spam markiert"
 
-#: classes/class.eat-my-spam.php:117
+#: classes/class.eat-my-spam.php:121
 msgid "Content removed by EatMySpam"
 msgstr "Inhalt von EatMySpam entfernt"
+
+#: classes/class.eat-my-spam.php:126
+#, php-format
+msgid "A new comment on the post \"%s\" was marked as spam by EatMySpam."
+msgstr ""
+"Ein neuer Kommentar zum Beitrag \"%s\" wurde von EatMySpam als Spam markiert."
+
+#: classes/class.eat-my-spam.php:128
+msgid "Author"
+msgstr "Autor"
+
+#: classes/class.eat-my-spam.php:129
+msgid "Email"
+msgstr "E-Mail"
+
+#: classes/class.eat-my-spam.php:130
+msgid "URL"
+msgstr "URL"
+
+#: classes/class.eat-my-spam.php:131
+msgid "Comment:"
+msgstr "Kommentar:"
+
+#: classes/class.eat-my-spam.php:134
+msgid "Spam list"
+msgstr "Spam-Liste"
 
 #: views/settings.php:3
 msgid "EatMySpam Settings"

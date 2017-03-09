@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-08 16:37+0100\n"
+"POT-Creation-Date: 2017-03-09 10:56+0100\n"
 "PO-Revision-Date: 2017-03-08 16:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,16 +20,41 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/class.eat-my-spam.admin.php:108
+#: classes/class.eat-my-spam.admin.php:112
 msgid "Settings"
 msgstr ""
 
-#: classes/class.eat-my-spam.php:111
+#: classes/class.eat-my-spam.php:115
 msgid "Comment marked as spam"
 msgstr ""
 
-#: classes/class.eat-my-spam.php:117
+#: classes/class.eat-my-spam.php:121
 msgid "Content removed by EatMySpam"
+msgstr ""
+
+#: classes/class.eat-my-spam.php:126
+#, php-format
+msgid "A new comment on the post \"%s\" was marked as spam by EatMySpam."
+msgstr ""
+
+#: classes/class.eat-my-spam.php:128
+msgid "Author"
+msgstr ""
+
+#: classes/class.eat-my-spam.php:129
+msgid "Email"
+msgstr ""
+
+#: classes/class.eat-my-spam.php:130
+msgid "URL"
+msgstr ""
+
+#: classes/class.eat-my-spam.php:131
+msgid "Comment:"
+msgstr ""
+
+#: classes/class.eat-my-spam.php:134
+msgid "Spam list"
 msgstr ""
 
 #: views/settings.php:3
