@@ -100,7 +100,7 @@ final class EatMySpam {
 			return $id;
 		}
 
-		if ( ! $post = get_post($comment['comment_post_ID']) ) {
+		if ( ! $post = get_post( $comment['comment_post_ID'] ) ) {
 			return $id;
 		}
 
@@ -122,21 +122,21 @@ final class EatMySpam {
 			);
 		}
 
-		$mail = array();
+		$mail   = array();
 		$mail[] = sprintf( __( 'A new comment on the post "%s" was marked as spam by EatMySpam.', 'eat-my-spam' ), strip_tags( $post->post_title ) );
 		$mail[] = '';
-		$mail[] = sprintf('%s: %s', esc_html__( 'Author', 'eat-my-spam' ), $comment['comment_author']);
-		$mail[] = sprintf('%s: %s', esc_html__( 'Email', 'eat-my-spam' ), $comment['comment_author_email']);
-		$mail[] = sprintf('%s: %s', esc_html__( 'URL', 'eat-my-spam' ), $comment['comment_author_url']);
-		$mail[] = esc_html__('Comment:', 'eat-my-spam' );
+		$mail[] = sprintf( '%s: %s', esc_html__( 'Author', 'eat-my-spam' ), $comment['comment_author'] );
+		$mail[] = sprintf( '%s: %s', esc_html__( 'Email', 'eat-my-spam' ), $comment['comment_author_email'] );
+		$mail[] = sprintf( '%s: %s', esc_html__( 'URL', 'eat-my-spam' ), $comment['comment_author_url'] );
+		$mail[] = esc_html__( 'Comment:', 'eat-my-spam' );
 		$mail[] = $content;
 		$mail[] = '';
-		$mail[] = sprintf( "%s: %s", esc_html__('Spam list', 'eat-my-spam'), admin_url( 'edit-comments.php?comment_status=spam' ) );
+		$mail[] = sprintf( "%s: %s", esc_html__( 'Spam list', 'eat-my-spam' ), admin_url( 'edit-comments.php?comment_status=spam' ) );
 
 		wp_mail(
 			get_bloginfo( 'admin_email' ),
 			$subject,
-			join(chr(10), $mail)
+			join( chr( 10 ), $mail )
 		);
 
 		return $id;
