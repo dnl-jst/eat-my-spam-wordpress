@@ -1,5 +1,8 @@
 # Changelog
 
+* (0.6.0) add add more information to spam notification mail
+* (0.6.0) check compatibility with PHP 7.0 and PHP 7.1
+* (0.6.0) report ham and spam classification to EatMySpam api
 * (0.5.0) add possibility to translate plugin
 * (0.5.0) add translations for de_DE
 * (0.4.1) fix in_array warnings on settings page
