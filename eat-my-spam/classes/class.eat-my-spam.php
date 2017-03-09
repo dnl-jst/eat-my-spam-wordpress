@@ -19,7 +19,7 @@ if ( ! function_exists( 'add_action' ) ) {
 final class EatMySpam {
 
 	const API_HOST = 'api.eat-my-spam.de';
-	const VERSION = '0.6.1';
+	const VERSION = '0.6.2';
 
 	/**
 	 * Constructor

@@ -1,5 +1,6 @@
 # Changelog
 
+* (0.6.2) bump version
 * (0.6.1) fix typos in plugin metadata
 * (0.6.0) add add more information to spam notification mail
 * (0.6.0) check compatibility with PHP 7.0 and PHP 7.1

@@ -19,6 +19,10 @@ This plugin allows you to use the free EatMySpam public API to check your WordPr
 
 == Changelog ==
 
+= 0.6.2 =
+
+* bump version
+
 = 0.6.1 =
 
 * fix typos in plugin metadata
