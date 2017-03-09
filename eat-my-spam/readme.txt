@@ -23,7 +23,7 @@ This plugin allows you to use the free EatMySpam public API to check your WordPr
 
 * add add more information to spam notification mail
 * check compatibility with PHP 7.0 and PHP 7.1
-* report ham and spam classification to EatMySpam api
+* report ham and spam classification to EatMySpam api (can be disabled in settings)
 
 = 0.5.0 =
 
