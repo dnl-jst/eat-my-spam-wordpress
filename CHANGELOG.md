@@ -1,5 +1,6 @@
 # Changelog
 
+* (0.7.0) add first version of contact-form-7 integration
 * (0.6.3) internal changes
 * (0.6.2) bump version
 * (0.6.1) fix typos in plugin metadata

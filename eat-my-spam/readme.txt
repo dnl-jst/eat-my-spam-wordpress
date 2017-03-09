@@ -3,7 +3,7 @@ Contributors: danieljost
 Tags: spam, comments, antispam
 Requires at least: 4.7
 Tested up to: 4.7.3
-Stable tag: 0.6.3
+Stable tag: 0.7.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
 
@@ -18,6 +18,10 @@ This plugin allows you to use the free EatMySpam public API to check your WordPr
 * Put the plugin file in your plugin directory and activate it in your WP backend.
 
 == Changelog ==
+
+= 0.7.0 =
+
+* add first version of contact-form-7 integration
 
 = 0.6.3 =
 
