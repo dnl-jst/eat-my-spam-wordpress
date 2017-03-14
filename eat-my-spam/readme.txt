@@ -1,6 +1,6 @@
 === EatMySpam ===
 Contributors: danieljost
-Tags: spam, comments, antispam
+Tags: spam, comments, antispam, anti-spam, anti spam, comment spam, contact form 7, contact form spam
 Requires at least: 4.7
 Tested up to: 4.7.3
 Stable tag: 0.7.1
