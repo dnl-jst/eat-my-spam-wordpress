@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-09 19:57+0100\n"
+"POT-Creation-Date: 2017-03-14 07:15+0100\n"
 "PO-Revision-Date: 2017-03-08 16:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -88,11 +88,13 @@ msgid "Spam threshold:"
 msgstr ""
 
 #: views/settings.php:29
-msgid "Remove spam?"
+msgid "Remove spam directly?"
 msgstr ""
 
 #: views/settings.php:30
-msgid "Only works with WordPress comments"
+msgid ""
+"Only works with WordPress comments. Otherwise spam is just tagged as spam "
+"and can be reviewed in the comment management area."
 msgstr ""
 
 #: views/settings.php:39

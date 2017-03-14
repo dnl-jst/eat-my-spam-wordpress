@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-09 19:57+0100\n"
-"PO-Revision-Date: 2017-03-09 19:59+0100\n"
+"POT-Creation-Date: 2017-03-14 07:15+0100\n"
+"PO-Revision-Date: 2017-03-14 07:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -26,7 +26,7 @@ msgstr "Einstellungen"
 
 #: includes/eat-my-spam.php:144
 msgid "Contact Form 7 form submission prevented"
-msgstr ""
+msgstr "Ein Contact Form 7-Formularversand wurde durch EatMySpam verhindert."
 
 #: includes/eat-my-spam.php:148
 msgid "A Contact Form 7 form submission was prevented by EatMySpam."
@@ -93,12 +93,16 @@ msgid "Spam threshold:"
 msgstr "Spam-Schwellwert:"
 
 #: views/settings.php:29
-msgid "Remove spam?"
-msgstr "Spam entfernen?"
+msgid "Remove spam directly?"
+msgstr "Spam direkt entfernen?"
 
 #: views/settings.php:30
-msgid "Only works with WordPress comments"
-msgstr "Funktioniert nur mit WordPress-Kommentaren"
+msgid ""
+"Only works with WordPress comments. Otherwise spam is just tagged as spam "
+"and can be reviewed in the comment management area."
+msgstr ""
+"Funktioniert nur mit WordPress-Kommentaren. Normalerweise werden Kommentare "
+"nur als Spam markiert und können in der Kommentarverwaltung überprüft werden."
 
 #: views/settings.php:39
 msgid "Send spam notifications to admin?"
@@ -143,6 +147,19 @@ msgstr "Daniel Jost"
 #. Author URI of the plugin/theme
 msgid "http://www.daniel-jost.de/"
 msgstr "http://www.daniel-jost.de/"
+
+#~ msgid ""
+#~ "Only works with WordPress comments, otherwise spam is just tagged as spam "
+#~ "and can be reviewed in the comment management area."
+#~ msgstr ""
+#~ "Funktioniert nur mit WordPress Kommentare, sonst Spam nur markiert ist, "
+#~ "als spam und im Kommentarbereich überprüft werden kann."
+
+#~ msgid "Remove spam?"
+#~ msgstr "Spam entfernen?"
+
+#~ msgid "Only works with WordPress comments"
+#~ msgstr "Funktioniert nur mit WordPress-Kommentaren"
 
 #~ msgid "Spam list"
 #~ msgstr "Spam-Liste"
