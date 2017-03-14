@@ -3,7 +3,7 @@ Contributors: danieljost
 Tags: spam, comments, antispam, anti-spam, anti spam, comment spam, contact form 7, contact form spam
 Requires at least: 4.7
 Tested up to: 4.7.3
-Stable tag: 0.7.1
+Stable tag: 0.7.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
 
@@ -30,6 +30,11 @@ Check out the web service at: https://www.eat-my-spam.de
 * Upload the plugin to your plugin directory and activate it in your WP backend.
 
 == Changelog ==
+
+= 0.7.2 =
+
+* clarify settings description and order
+* cleanup plugin options on uninstall
 
 = 0.7.1 =
 

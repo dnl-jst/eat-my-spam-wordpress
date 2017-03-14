@@ -1,5 +1,7 @@
 # Changelog
 
+* (0.7.2) clarify settings description and order
+* (0.7.2) cleanup plugin options on uninstall
 * (0.7.1) clarify description in readme.txt that plugin uses a web service to classify spam
 * (0.7.1) clarify features in readme.txt
 * (0.7.0) add first version of contact-form-7 integration
