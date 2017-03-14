@@ -23,6 +23,8 @@ Main features of this plugin:
 * Tested to be compatible with PHP 7.0 and PHP 7.1.
 * Unlike other plugins EatMySpam is completely free for both personal and commercial use.
 
+Check out the web service at: https://www.eat-my-spam.de
+
 == Installation ==
 
 * Upload the plugin to your plugin directory and activate it in your WP backend.
