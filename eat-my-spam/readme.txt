@@ -3,21 +3,36 @@ Contributors: danieljost
 Tags: spam, comments, antispam
 Requires at least: 4.7
 Tested up to: 4.7.3
-Stable tag: 0.7.0
+Stable tag: 0.7.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
 
-This plugin allows you to use the free EatMySpam public API to check your WordPress comments for spam.
+EatMySpam checks your comments and Contact Form 7 submissions against the EatMySpam web service to classify if it is spam or not.
 
 == Description ==
 
-This plugin allows you to use the free EatMySpam public API to check your WordPress comments for spam. Tested to be compatible with PHP 7.0 and PHP 7.1.
+EatMySpam checks your comments and Contact Form 7 submissions against the EatMySpam web service to classify if it is spam or not.
+
+Main features of this plugin:
+
+* Automatically checks your comments against the EatMySpam web service to classify if they are spam or not.
+* Comments classfied as spam are marked as spam in the comment system and can be unspammed.
+* Contact Form 7 integration: checks Contact Form 7 submissions against the EatMySpam web service. (can be disabled)
+* User classifications are also reported to the EatMySpam web service. (can be disabled)
+* Optional feature allows you to delete comment spam directly.
+* Tested to be compatible with PHP 7.0 and PHP 7.1.
+* Unlike other plugins EatMySpam is completely free for both personal and commercial use.
 
 == Installation ==
 
-* Put the plugin file in your plugin directory and activate it in your WP backend.
+* Upload the plugin to your plugin directory and activate it in your WP backend.
 
 == Changelog ==
+
+= 0.7.1 =
+
+* clarify description in readme.txt that plugin uses a web service to classify spam
+* clarify features in readme.txt
 
 = 0.7.0 =
 
