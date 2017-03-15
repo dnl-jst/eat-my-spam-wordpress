@@ -29,6 +29,10 @@ Check out the web service at: https://www.eat-my-spam.de
 
 * Upload the plugin to your plugin directory and activate it in your WP backend.
 
+== Screenshots ==
+
+1. Settings page for the EatMySpam plugin.
+
 == Changelog ==
 
 = 0.7.2 =
