@@ -237,7 +237,7 @@ class EatMySpam {
 			),
 			'body'        => json_encode( $data ),
 			'httpversion' => '1.0',
-			'timeout'     => 15
+			'timeout'     => 5
 		);
 
 		$response = wp_remote_post( $url, $args );

@@ -97,7 +97,7 @@ class EatMySpam_Admin {
 				'User-Agent' => 'EatMySpam/' . self::$version . ', WordPress/' . $GLOBALS['wp_version']
 			),
 			'httpversion' => '1.0',
-			'timeout'     => 15
+			'timeout'     => 5
 		);
 
 		$response = wp_remote_get( $url, $args );
@@ -152,7 +152,7 @@ class EatMySpam_Admin {
 				),
 				'body'        => json_encode( $data ),
 				'httpversion' => '1.0',
-				'timeout'     => 15
+				'timeout'     => 5
 			);
 
 			$response = wp_remote_post( $url, $args );
