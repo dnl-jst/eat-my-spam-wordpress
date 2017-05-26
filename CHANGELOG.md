@@ -1,5 +1,6 @@
 # Changelog
 
+* (0.7.3) reduce timeout for eat my spam requests
 * (0.7.2) clarify settings description and order
 * (0.7.2) cleanup plugin options on uninstall
 * (0.7.1) clarify description in readme.txt that plugin uses a web service to classify spam
