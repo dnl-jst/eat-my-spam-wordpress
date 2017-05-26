@@ -24,7 +24,7 @@ class EatMySpam_Admin {
 	 *
 	 * @var string
 	 **/
-	protected static $version = '0.7.3';
+	protected static $version = '0.8.0';
 
 	/**
 	 * @var array
