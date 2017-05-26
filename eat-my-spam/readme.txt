@@ -35,6 +35,11 @@ Check out the web service at: https://www.eat-my-spam.de
 
 == Changelog ==
 
+= 0.8.0 =
+
+* language detection: you can now define languages that are allowed or languages that are not allowed to be used in the comment system
+* garbage collection: you can now define a number of days after which spam comments are deleted
+
 = 0.7.3 =
 
 * reduce timeout for eat my spam requests

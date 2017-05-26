@@ -1,5 +1,7 @@
 # Changelog
 
+* (0.8.0) language detection: you can now define languages that are allowed or languages that are not allowed to be used in the comment system
+* (0.8.0) garbage collection: you can now define a number of days after which spam comments are deleted
 * (0.7.3) reduce timeout for eat my spam requests
 * (0.7.2) clarify settings description and order
 * (0.7.2) cleanup plugin options on uninstall
