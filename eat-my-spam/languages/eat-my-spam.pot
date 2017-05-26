@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-05-26 11:48+0200\n"
+"POT-Creation-Date: 2017-05-26 22:48+0200\n"
 "PO-Revision-Date: 2017-03-08 16:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,55 +20,55 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: includes/eat-my-spam.admin.php:115
+#: includes/eat-my-spam.admin.php:168
 msgid "Settings"
 msgstr ""
 
-#: includes/eat-my-spam.php:150
+#: includes/eat-my-spam.php:154
 msgid "Contact Form 7 form submission prevented"
 msgstr ""
 
-#: includes/eat-my-spam.php:154
+#: includes/eat-my-spam.php:158
 msgid "A Contact Form 7 form submission was prevented by EatMySpam."
 msgstr ""
 
-#: includes/eat-my-spam.php:158
+#: includes/eat-my-spam.php:162
 #, php-format
 msgid ""
 "To change EatMySpam settings, log in to WordPress at %s and navigate to: "
 "Settings > EatMySpam"
 msgstr ""
 
-#: includes/eat-my-spam.php:198
+#: includes/eat-my-spam.php:202
 msgid "Comment marked as spam"
 msgstr ""
 
-#: includes/eat-my-spam.php:204
+#: includes/eat-my-spam.php:208
 msgid "Content removed by EatMySpam"
 msgstr ""
 
-#: includes/eat-my-spam.php:209
+#: includes/eat-my-spam.php:213
 #, php-format
 msgid "A new comment on the post \"%s\" was marked as spam by EatMySpam."
 msgstr ""
 
-#: includes/eat-my-spam.php:211
+#: includes/eat-my-spam.php:215
 msgid "Author"
 msgstr ""
 
-#: includes/eat-my-spam.php:212
+#: includes/eat-my-spam.php:216
 msgid "Email"
 msgstr ""
 
-#: includes/eat-my-spam.php:213
+#: includes/eat-my-spam.php:217
 msgid "URL"
 msgstr ""
 
-#: includes/eat-my-spam.php:214
+#: includes/eat-my-spam.php:218
 msgid "Comment:"
 msgstr ""
 
-#: includes/eat-my-spam.php:217
+#: includes/eat-my-spam.php:221
 #, php-format
 msgid ""
 "To manage comments, log in to WordPress at %s and navigate to: Comments > "
@@ -130,6 +130,18 @@ msgstr ""
 
 #: views/settings.php:76
 msgid "Ruleset description"
+msgstr ""
+
+#: views/settings.php:95
+msgid "Language Detection:"
+msgstr ""
+
+#: views/settings.php:101
+msgid "Allowed languages:"
+msgstr ""
+
+#: views/settings.php:114
+msgid "Disallowed languages:"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

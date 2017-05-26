@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-05-26 11:48+0200\n"
-"PO-Revision-Date: 2017-05-26 11:49+0200\n"
+"POT-Creation-Date: 2017-05-26 22:48+0200\n"
+"PO-Revision-Date: 2017-05-26 22:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -20,19 +20,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: includes/eat-my-spam.admin.php:115
+#: includes/eat-my-spam.admin.php:168
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: includes/eat-my-spam.php:150
+#: includes/eat-my-spam.php:154
 msgid "Contact Form 7 form submission prevented"
 msgstr "Ein Contact Form 7-Formularversand wurde durch EatMySpam verhindert"
 
-#: includes/eat-my-spam.php:154
+#: includes/eat-my-spam.php:158
 msgid "A Contact Form 7 form submission was prevented by EatMySpam."
 msgstr "Ein Contact Form 7-Formularversand wurde durch EatMySpam verhindert."
 
-#: includes/eat-my-spam.php:158
+#: includes/eat-my-spam.php:162
 #, php-format
 msgid ""
 "To change EatMySpam settings, log in to WordPress at %s and navigate to: "
@@ -41,37 +41,37 @@ msgstr ""
 "Um die EatMySpam-Einstellungen zu ändern, melden Sie sich bei WordPress auf "
 "%s an und navigieren Sie zu: Einstellungen > EatMySpam"
 
-#: includes/eat-my-spam.php:198
+#: includes/eat-my-spam.php:202
 msgid "Comment marked as spam"
 msgstr "Kommentar als Spam markiert"
 
-#: includes/eat-my-spam.php:204
+#: includes/eat-my-spam.php:208
 msgid "Content removed by EatMySpam"
 msgstr "Inhalt von EatMySpam entfernt"
 
-#: includes/eat-my-spam.php:209
+#: includes/eat-my-spam.php:213
 #, php-format
 msgid "A new comment on the post \"%s\" was marked as spam by EatMySpam."
 msgstr ""
 "Ein neuer Kommentar zum Beitrag \"%s\" wurde von EatMySpam als Spam markiert."
 
-#: includes/eat-my-spam.php:211
+#: includes/eat-my-spam.php:215
 msgid "Author"
 msgstr "Autor"
 
-#: includes/eat-my-spam.php:212
+#: includes/eat-my-spam.php:216
 msgid "Email"
 msgstr "E-Mail"
 
-#: includes/eat-my-spam.php:213
+#: includes/eat-my-spam.php:217
 msgid "URL"
 msgstr "URL"
 
-#: includes/eat-my-spam.php:214
+#: includes/eat-my-spam.php:218
 msgid "Comment:"
 msgstr "Kommentar:"
 
-#: includes/eat-my-spam.php:217
+#: includes/eat-my-spam.php:221
 #, php-format
 msgid ""
 "To manage comments, log in to WordPress at %s and navigate to: Comments > "
@@ -142,6 +142,18 @@ msgstr "Regelsatz-Schlüssel"
 #: views/settings.php:76
 msgid "Ruleset description"
 msgstr "Beschreibung des Regelsatzes"
+
+#: views/settings.php:95
+msgid "Language Detection:"
+msgstr "Automatische Spracherkennung:"
+
+#: views/settings.php:101
+msgid "Allowed languages:"
+msgstr "Erlaubte Sprachen:"
+
+#: views/settings.php:114
+msgid "Disallowed languages:"
+msgstr "Unerlaubte Sprachen:"
 
 #. Plugin Name of the plugin/theme
 msgid "EatMySpam"
