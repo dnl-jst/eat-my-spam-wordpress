@@ -10,3 +10,4 @@ delete_option( 'eatmyspam_send_notifications' );
 delete_option( 'eatmyspam_excluded_rulesets' );
 delete_option( 'eatmyspam_disable_reports' );
 delete_option( 'eatmyspam_disable_cf7_integration' );
+delete_option( 'eatmyspam_delete_spam_after_days' );

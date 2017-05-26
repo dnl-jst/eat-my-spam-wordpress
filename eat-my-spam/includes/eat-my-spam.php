@@ -61,7 +61,6 @@ class EatMySpam {
 					wp_safe_redirect( esc_url_raw( get_permalink( $post ) ) );
 					die();
 
-
 				} else {
 
 					add_filter(
@@ -86,6 +85,13 @@ class EatMySpam {
 
 				}
 			}
+		}
+
+		# "statistically" every tenth request should fire garbage collection
+		if (rand(1, 100) <= 10) {
+
+			# do garbage collection after checking comment
+			self::garbage_collection();
 		}
 
 		return $comment;
@@ -249,6 +255,32 @@ class EatMySpam {
 		}
 	}
 
+	/**
+	 * garbage collection:
+	 * deletes old comments marked as spam after the configured
+	 * delay
+	 *
+	 *
+	 */
+	protected static function garbage_collection( ) {
+
+		global $wpdb;
+
+		$deleteSpamAfterDays = (int) get_option( 'eatmyspam_delete_spam_after_days', 0 );
+
+		# do nothing if timespan is zero or less
+		if ($deleteSpamAfterDays <= 0) {
+			return;
+		}
+
+		# delete old comments
+		$wpdb->query(
+			$wpdb->prepare(
+				'DELETE FROM `' . $wpdb->comments . '` WHERE `comment_approved` = \'spam\' AND comment_date_gmt < SUBDATE(NOW(), %d)',
+				$deleteSpamAfterDays
+			)
+		);
+	}
 }
 
 EatMySpam::init();

@@ -54,6 +54,16 @@
                     </label>
                 </td>
             </tr>
+
+            <tr>
+                <td colspan="3">
+                    <label for="eatmyspam_delete_spam_after_days"><?php esc_html_e( 'Remove spam after amount of days:', 'eat-my-spam' ); ?>
+                        <span class="color: grey;">(<?php esc_html_e( 'Only works with WordPress comments. If you do not delete spam directly, spam will be deleted after this configured number of days. Defaults to 0 which disables this function.', 'eat-my-spam' ); ?>)</span>
+                    </label><br>
+                    <input id="eatmyspam_delete_spam_after_days" name="eatmyspam_delete_spam_after_days"
+                           type="number" value="<?php echo get_option( 'eatmyspam_delete_spam_after_days', 0 ); ?>"/>
+                </td>
+            </tr>
         </table>
 
         <h2><?php esc_html_e( 'Excluded rulesets:', 'eat-my-spam' ); ?></h2>
