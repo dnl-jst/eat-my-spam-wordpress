@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: EatMySpam\n"
-"POT-Creation-Date: 2017-03-14 07:15+0100\n"
+"POT-Creation-Date: 2017-05-26 11:48+0200\n"
 "PO-Revision-Date: 2017-03-08 16:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: eat-my-spam.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,55 +20,55 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: includes/eat-my-spam.admin.php:114
+#: includes/eat-my-spam.admin.php:115
 msgid "Settings"
 msgstr ""
 
-#: includes/eat-my-spam.php:144
+#: includes/eat-my-spam.php:150
 msgid "Contact Form 7 form submission prevented"
 msgstr ""
 
-#: includes/eat-my-spam.php:148
+#: includes/eat-my-spam.php:154
 msgid "A Contact Form 7 form submission was prevented by EatMySpam."
 msgstr ""
 
-#: includes/eat-my-spam.php:152
+#: includes/eat-my-spam.php:158
 #, php-format
 msgid ""
 "To change EatMySpam settings, log in to WordPress at %s and navigate to: "
 "Settings > EatMySpam"
 msgstr ""
 
-#: includes/eat-my-spam.php:192
+#: includes/eat-my-spam.php:198
 msgid "Comment marked as spam"
 msgstr ""
 
-#: includes/eat-my-spam.php:198
+#: includes/eat-my-spam.php:204
 msgid "Content removed by EatMySpam"
 msgstr ""
 
-#: includes/eat-my-spam.php:203
+#: includes/eat-my-spam.php:209
 #, php-format
 msgid "A new comment on the post \"%s\" was marked as spam by EatMySpam."
 msgstr ""
 
-#: includes/eat-my-spam.php:205
+#: includes/eat-my-spam.php:211
 msgid "Author"
 msgstr ""
 
-#: includes/eat-my-spam.php:206
+#: includes/eat-my-spam.php:212
 msgid "Email"
 msgstr ""
 
-#: includes/eat-my-spam.php:207
+#: includes/eat-my-spam.php:213
 msgid "URL"
 msgstr ""
 
-#: includes/eat-my-spam.php:208
+#: includes/eat-my-spam.php:214
 msgid "Comment:"
 msgstr ""
 
-#: includes/eat-my-spam.php:211
+#: includes/eat-my-spam.php:217
 #, php-format
 msgid ""
 "To manage comments, log in to WordPress at %s and navigate to: Comments > "
@@ -87,37 +87,48 @@ msgstr ""
 msgid "Spam threshold:"
 msgstr ""
 
-#: views/settings.php:29
+#: views/settings.php:28
+msgid "Send spam notifications to admin?"
+msgstr ""
+
+#: views/settings.php:36
+msgid "Disable automatic reports to EatMySpam server?"
+msgstr ""
+
+#: views/settings.php:44
+msgid "Disable Contact Form 7 integration?"
+msgstr ""
+
+#: views/settings.php:52
 msgid "Remove spam directly?"
 msgstr ""
 
-#: views/settings.php:30
+#: views/settings.php:53
 msgid ""
 "Only works with WordPress comments. Otherwise spam is just tagged as spam "
 "and can be reviewed in the comment management area."
 msgstr ""
 
-#: views/settings.php:39
-msgid "Send spam notifications to admin?"
-msgstr ""
-
-#: views/settings.php:47
-msgid "Disable automatic reports to EatMySpam server?"
-msgstr ""
-
-#: views/settings.php:55
-msgid "Disable Contact Form 7 integration?"
+#: views/settings.php:60
+msgid "Remove spam after amount of days:"
 msgstr ""
 
 #: views/settings.php:61
+msgid ""
+"Only works with WordPress comments. If you do not delete spam directly, "
+"spam will be deleted automatically after this configured number of days. "
+"Defaults to 0 which disables this function."
+msgstr ""
+
+#: views/settings.php:69
 msgid "Excluded rulesets:"
 msgstr ""
 
-#: views/settings.php:67
+#: views/settings.php:75
 msgid "Ruleset key"
 msgstr ""
 
-#: views/settings.php:68
+#: views/settings.php:76
 msgid "Ruleset description"
 msgstr ""
 
