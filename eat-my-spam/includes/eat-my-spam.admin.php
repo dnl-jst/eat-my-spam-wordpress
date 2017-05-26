@@ -57,6 +57,8 @@ class EatMySpam_Admin {
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_disable_reports' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_disable_cf7_integration' );
 		register_setting( 'eat-my-spam-settings', 'eatmyspam_delete_spam_after_days' );
+		register_setting( 'eat-my-spam-settings', 'eatmyspam_allowed_languages' );
+		register_setting( 'eat-my-spam-settings', 'eatmyspam_disallowed_languages' );
 
 	}
 
@@ -79,10 +81,30 @@ class EatMySpam_Admin {
 
 		$rulesets = $response->rulesets;
 
+		$response = self::load_languages();
+
+		if ( $response === false || ! isset( $response->languages ) || ! is_array( $response->languages ) ) {
+			die( 'error loading languages' );
+		}
+
+		$languages = $response->languages;
+
 		$excludedRulesets = get_option( 'eatmyspam_excluded_rulesets', array() );
 
 		if ( ! is_array( $excludedRulesets ) ) {
 			$excludedRulesets = array();
+		}
+
+		$allowedLanguages = get_option( 'eatmyspam_allowed_languages', array() );
+
+		if ( ! is_array( $allowedLanguages ) ) {
+			$allowedLanguages = array();
+		}
+
+		$disallowedLanguages = get_option( 'eatmyspam_disallowed_languages', array() );
+
+		if ( ! is_array( $disallowedLanguages ) ) {
+			$disallowedLanguages = array();
 		}
 
 		include( plugin_dir_path( __FILE__ ) . '/../views/settings.php' );
@@ -92,6 +114,27 @@ class EatMySpam_Admin {
 	protected static function load_rulesets() {
 
 		$url = 'https://' . self::API_HOST . '/rulesets';
+
+		$args = array(
+			'headers'     => array(
+				'User-Agent' => 'EatMySpam/' . self::$version . ', WordPress/' . $GLOBALS['wp_version']
+			),
+			'httpversion' => '1.0',
+			'timeout'     => 5
+		);
+
+		$response = wp_remote_get( $url, $args );
+
+		if ( is_wp_error( $response ) ) {
+			return false;
+		} else {
+			return json_decode( $response['body'] );
+		}
+	}
+
+	protected static function load_languages() {
+
+		$url = 'https://' . self::API_HOST . '/languages';
 
 		$args = array(
 			'headers'     => array(

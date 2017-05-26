@@ -43,13 +43,17 @@ class EatMySpam {
 	 */
 	public static function check_comment( $comment ) {
 
-		$post              = get_post( $comment['comment_post_ID'] );
-		$excluded_rulesets = get_option( 'eatmyspam_excluded_rulesets', array() );
+		$post                 = get_post( $comment['comment_post_ID'] );
+		$excluded_rulesets    = get_option( 'eatmyspam_excluded_rulesets', array() );
+		$allowed_languages    = get_option( 'eatmyspam_allowed_languages', array() );
+		$disallowed_languages = get_option( 'eatmyspam_disallowed_languages', array() );
 
 		$result = self::do_post( 'analyze', array(
-			'message'          => $comment['comment_content'],
-			'excludedRulesets' => $excluded_rulesets,
-			'threshold'        => get_option( 'eatmyspam_threshold', 5 )
+			'message'             => $comment['comment_content'],
+			'excludedRulesets'    => $excluded_rulesets,
+			'threshold'           => get_option( 'eatmyspam_threshold', 5 ),
+			'allowedLanguages'    => $allowed_languages,
+			'disallowedLanguages' => $disallowed_languages
 		) );
 
 		if ( $result !== null ) {
@@ -229,7 +233,7 @@ class EatMySpam {
 	 * make a post request to the eat my spam api
 	 *
 	 * @param string $method method to be called
-	 * @param string $data array of data to be posted
+	 * @param array $data array of data to be posted
 	 *
 	 * @return bool|object decoded response from eat my spam api
 	 */
