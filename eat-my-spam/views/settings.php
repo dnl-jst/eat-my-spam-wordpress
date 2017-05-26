@@ -92,6 +92,38 @@
 
         </table>
 
+        <h2><?php esc_html_e( 'Language Detection:', 'eat-my-spam' ); ?></h2>
+
+        <table style="width: 100%;">
+
+            <tr>
+                <td colspan="3">
+                    <label for="eatmyspam_allowed_languages"><?php esc_html_e( 'Allowed languages:', 'eat-my-spam' ); ?></label><br>
+                    <select id="eatmyspam_allowed_languages" name="eatmyspam_allowed_languages[]" class="select2" multiple>
+	                    <?php foreach ( $languages as $language ) : ?>
+                        <option value="<?php echo esc_attr($language->{"2"}); ?>" <?php echo ( in_array( $language->{"2"}, $allowedLanguages ) ) ? 'selected="selected"' : ''; ?>>
+                            <?php echo esc_html( $language->name ); ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    <label for="eatmyspam_disallowed_languages"><?php esc_html_e( 'Disallowed languages:', 'eat-my-spam' ); ?></label><br>
+                    <select id="eatmyspam_disallowed_languages" name="eatmyspam_disallowed_languages[]" class="select2" multiple>
+				        <?php foreach ( $languages as $language ) : ?>
+                            <option value="<?php echo esc_attr($language->{"2"}); ?>" <?php echo ( in_array( $language->{"2"}, $disallowedLanguages ) ) ? 'selected="selected"' : ''; ?>>
+						        <?php echo esc_html( $language->name ); ?>
+                            </option>
+				        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+
 		<?php submit_button(); ?>
 
     </form>

@@ -46,6 +46,13 @@ class EatMySpam_Admin {
 		add_action( 'unspam_comment', array( __CLASS__, 'report_ham' ) );
 
 		add_filter( 'plugin_action_links_eat-my-spam/eat-my-spam.php', array( __CLASS__, 'add_settings_link' ) );
+
+		self::init_plugin_sources();
+
+		wp_enqueue_script('ems_script');
+		wp_enqueue_script('ems_script2');
+		wp_enqueue_style('ems_style');
+
 	}
 
 	public static function admin_init() {
@@ -64,11 +71,14 @@ class EatMySpam_Admin {
 
 	public static function admin_menu() {
 
-		add_options_page( 'EatMySpam Settings', 'EatMySpam', 'manage_options', 'eat-my-spam', array(
+		$page = add_options_page( 'EatMySpam Settings', 'EatMySpam', 'manage_options', 'eat-my-spam', array(
 			__CLASS__,
 			'menu_page_callback'
 		) );
 
+		# integrate js and styles
+		add_action( 'admin_print_scripts-' . $page, array( __CLASS__, 'add_options_script' ) );
+		add_action( 'admin_print_styles-' . $page, array( __CLASS__, 'add_options_style' ) );
 	}
 
 	public static function menu_page_callback() {
@@ -208,6 +218,27 @@ class EatMySpam_Admin {
 			}
 
 		}
+	}
+
+	public static function init_plugin_sources()
+	{
+		wp_register_script(
+			'ems_script',
+			plugins_url('../js/select2.full.min.js', __FILE__),
+			array('jquery')
+		);
+
+		wp_register_script(
+			'ems_script2',
+			plugins_url('../js/main.js', __FILE__),
+			array('ems_script')
+		);
+
+		wp_register_style(
+			'ems_style',
+			plugins_url('../css/select2.min.css', __FILE__),
+			array()
+		);
 	}
 
 }
