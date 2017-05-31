@@ -19,7 +19,10 @@ if ( !function_exists( 'add_action' ) ) {
     exit();
 }
 
-load_plugin_textdomain( 'eat-my-spam', false, '/eat-my-spam/languages/' );
+function ems_load_textdomain() {
+	load_plugin_textdomain( 'eat-my-spam', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'ems_load_textdomain' );
 
 if ( is_admin() )
     require_once( 'includes/eat-my-spam.admin.php' );
