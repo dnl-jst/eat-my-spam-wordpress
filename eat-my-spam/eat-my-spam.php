@@ -4,7 +4,7 @@
 Plugin Name: EatMySpam
 Plugin URI: https://github.com/dnl-jst/eat-my-spam-wordpress
 Description: Check your WordPress comments for spam
-Version: 0.8.0
+Version: 0.8.1
 Author: Daniel Jost
 Author URI: http://www.daniel-jost.de/
 Text Domain: eat-my-spam

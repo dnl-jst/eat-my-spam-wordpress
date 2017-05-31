@@ -3,7 +3,7 @@ Contributors: danieljost
 Tags: spam, comments, antispam, anti-spam, anti spam, comment spam, contact form 7, contact form spam, askimet alternative
 Requires at least: 4.7
 Tested up to: 4.8
-Stable tag: 0.8.0
+Stable tag: 0.8.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
 
@@ -34,6 +34,10 @@ Check out the web service at: https://www.eat-my-spam.de
 1. Settings page for the EatMySpam plugin.
 
 == Changelog ==
+
+= 0.8.1 =
+
+* minor language fixes
 
 = 0.8.0 =
 
