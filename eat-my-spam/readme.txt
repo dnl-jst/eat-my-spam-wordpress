@@ -2,7 +2,7 @@
 Contributors: danieljost
 Tags: spam, comments, antispam, anti-spam, anti spam, comment spam, contact form 7, contact form spam, askimet alternative
 Requires at least: 4.7
-Tested up to: 4.7.5
+Tested up to: 4.8
 Stable tag: 0.8.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0
